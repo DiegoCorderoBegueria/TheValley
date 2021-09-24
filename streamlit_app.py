@@ -4,11 +4,11 @@ from datetime import date
 from PIL import Image
 from lightgbm import LGBMClassifier
 
-model_filename = 'Model & Scalers/LGBM.pkl'
+model_filename = 'Model&Scalers/LGBM.pkl'
 model = pickle.load(open(model_filename, 'rb'))
-cat_encoder_filename = 'Model & Scalers/cat_encoder.pkl'
+cat_encoder_filename = 'Model&Scalers/cat_encoder.pkl'
 cat_encoder = pickle.load(open(cat_encoder_filename, 'rb'))
-num_scaler_filename = 'Model & Scalers/num_encoder.pkl'
+num_scaler_filename = 'Model&Scalers/num_encoder.pkl'
 num_scaler = pickle.load(open(num_scaler_filename, 'rb'))
 
 logo = 'others/logo.png'
