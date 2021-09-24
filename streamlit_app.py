@@ -130,4 +130,6 @@ n_noches = num_scaler.transform(n_noches)
 X = [marca, 0, 0, t_reserva, n_noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 1, all_inclusive, 1, 0]
 prediction = model.predict(X)
 
-st.write('Su reserva ha sido procesada correctamente, aunque no contamos con que aparezca :(') if prediction[0] == 1 else st.write('Su reserva ha sido procesada correctamente, le esperamos :)')
+reserva_aceptada = 'Su reserva ha sido procesada correctamente, aunque no contamos con que aparezca :('
+reserva_cancelada = 'Su reserva ha sido procesada correctamente, le esperamos :)'
+st.write(reserva_aceptada) if prediction[0] == 1 else st.write(reserva_cancelada)
