@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 from datetime import date
 from PIL import Image
+from lightgbm import LGBMClassifier
 
 model_filename = 'Model & Scalers/LGBM.pkl'
 model = pickle.load(open(model_filename, 'rb'))
