@@ -3,6 +3,7 @@ import pickle
 from datetime import date
 from PIL import Image
 from lightgbm import LGBMClassifier
+import category_encoders
 
 model_filename = 'Model&Scalers/LGBM.pkl'
 model = pickle.load(open(model_filename, 'rb'))
