@@ -11,7 +11,7 @@ cat_encoder = pickle.load(open(cat_encoder_filename, 'rb'))
 num_scaler_filename = 'Model & Scalers/num_encoder.pkl'
 num_scaler = pickle.load(open(num_scaler_filename, 'rb'))
 
-logo = 'others\logo.png'
+logo = 'others/logo.png'
 st.image(Image.open(logo))
 
 st.text("")
