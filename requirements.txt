@@ -2,3 +2,4 @@ streamlit==0.81.1
 pandas==1.2.4
 scikit-learn==0.24.2
 lightgbm==3.2.1
+category_encoders==2.2.2
