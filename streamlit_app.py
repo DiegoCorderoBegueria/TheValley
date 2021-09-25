@@ -122,7 +122,7 @@ fuente = 'DESCONOCIDA'
 
 all_inclusive = 1 if regimen == 'Todo incluido' else 0
 
-categoricas = [marca, t_reserva, lead_time, pais, fuente]
+categoricas = [marca, 0, t_reserva, lead_time, pais, fuente]
 vars_encoded = cat_encoder.transform([categoricas])
 marca, t_reserva, lead_time, pais, fuente = vars_encoded[0], vars_encoded[1], vars_encoded[2], vars_encoded[3], vars_encoded[4]
 n_noches = num_scaler.transform(n_noches)
