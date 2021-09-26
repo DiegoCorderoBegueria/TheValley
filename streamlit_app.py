@@ -117,7 +117,7 @@ else:
     lead_time = '+180'
 
 t_reserva = 'DESCONOCIDO'
-pais = 'ESPAÑA'
+pais = 'ESTADOS UNIDOS'
 fuente = 'DESCONOCIDA'
 
 all_inclusive = 1 if regimen == 'Todo incluido' else 0
@@ -136,7 +136,7 @@ num_vars = [n_noches, 200]
 vars_scaled = num_scaler.transform([num_vars])
 noches, precio = vars_scaled[0][0], vars_scaled[0][1]
 
-X = [marca, club, 0, t_reserva, noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 1, all_inclusive, 1, precio]
+X = [marca, club, 0, t_reserva, noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 0, all_inclusive, 1, precio]
 prediction = model.predict([X])
 st.write(prediction[0])
 
