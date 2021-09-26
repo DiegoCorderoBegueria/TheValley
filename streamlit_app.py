@@ -144,4 +144,4 @@ reserva_aceptada = 'Su reserva ha sido procesada correctamente, le esperamos :)'
 
 if st.button('RESERVAR'):
            result = st.write(reserva_cancelada) if prediction[0] == 1 else st.write(reserva_aceptada)
-           st.write(result)
+           result
