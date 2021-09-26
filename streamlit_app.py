@@ -138,13 +138,13 @@ noches, precio = vars_scaled[0][0], vars_scaled[0][1]
 
 X = [marca, club, 0, t_reserva, noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 1, all_inclusive, 1, precio]
 prediction = model.predict([X])
-st.write(prediction)
+
 
 reserva_aceptada = 'Su reserva ha sido procesada correctamente, aunque no contamos con que aparezca :('
 reserva_cancelada = 'Su reserva ha sido procesada correctamente, le esperamos :)'
 
 if st.button('RESERVAR'):
-           result = st.write(reserva_aceptada) if prediction[0] == 1 else st.write(reserva_cancelada)
+           result = st.write(reserva_aceptada) if prediction[0][0] == 1 else st.write(reserva_cancelada)
            st.write(result)
            
            
