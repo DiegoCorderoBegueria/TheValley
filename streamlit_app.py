@@ -132,7 +132,8 @@ categoricas = {'NOM_MARCA' : marca,
 vars_encoded = cat_encoder.transform([categoricas])
 marca, club, t_reserva, lead_time, pais, fuente = vars_encoded['NOM_MARCA'], vars_encoded['ID_CLUB_FACTURADO'], vars_encoded['DES_TIPO_RESERVA'], vars_encoded['DES_TIER_LEAD_TIME'], vars_encoded['NOM_PAIS_HUESPED_FUSIONADO'], vars_encoded['NOM_FUENTE']
 
-vars_scaled = num_scaler.transform([n_noches,0])
+num_vars = [n_noches, 0]
+vars_scaled = num_scaler.transform([num_vars])
 noches, precio = vars_scaled[0][0], vars_scaled[0][1]
 
 X = [marca, club, 0, t_reserva, noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 1, all_inclusive, 1, precio]
