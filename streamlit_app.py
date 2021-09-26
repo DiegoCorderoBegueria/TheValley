@@ -129,7 +129,7 @@ categoricas = {'NOM_MARCA' : marca,
                'NOM_PAIS_HUESPED_FUSIONADO' : pais,
                'NOM_FUENTE' : fuente}
 
-vars_encoded = encoder.transform([categoricas])
+vars_encoded = cat_encoder.transform([categoricas])
 marca, club, t_reserva, lead_time, pais, fuente = vars_encoded['NOM_MARCA'], vars_encoded['ID_CLUB_FACTURADO'], vars_encoded['DES_TIPO_RESERVA'], vars_encoded['DES_TIER_LEAD_TIME'], vars_encoded['NOM_PAIS_HUESPED_FUSIONADO'], vars_encoded['NOM_FUENTE']
 
 n_noches = num_scaler.transform(n_noches)
