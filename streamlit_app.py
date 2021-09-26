@@ -141,4 +141,6 @@ prediction = model.predict([X])
 
 reserva_aceptada = 'Su reserva ha sido procesada correctamente, aunque no contamos con que aparezca :('
 reserva_cancelada = 'Su reserva ha sido procesada correctamente, le esperamos :)'
-st.write(reserva_aceptada) if prediction[0] == 1 else st.write(reserva_cancelada)
+pred = st.write(reserva_aceptada) if prediction[0] == 1 else st.write(reserva_cancelada)
+
+st.button('RESERVAR', key=None, help=None, on_click=pred, args=None, kwargs=None)
