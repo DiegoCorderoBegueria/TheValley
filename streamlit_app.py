@@ -143,4 +143,4 @@ reserva_aceptada = 'Su reserva ha sido procesada correctamente, aunque no contam
 reserva_cancelada = 'Su reserva ha sido procesada correctamente, le esperamos :)'
 pred = st.write(reserva_aceptada) if prediction[0] == 1 else st.write(reserva_cancelada)
 
-st.button('RESERVAR', key=None, help=None, on_click=pred, args=None, kwargs=None)
+boton_reserva = st.button('RESERVAR', key=None, help=None, on_click=pred, args=None, kwargs=None)
