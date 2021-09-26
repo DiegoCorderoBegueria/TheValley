@@ -62,7 +62,7 @@ n_noches = (check_out - check_in).days
 n_adultos = st.slider("Número de adultos", 0, 10, 1)
 n_ninos = st.slider("Número de niños", 0, 10, 0)
 n_bebes = st.slider("Número de bebés", 0, 10, 0)
-regimen = st.selectbox("Régimen: ", options=['Todo incluido', 'Media pensión', 'Sólo desayuno', 'Ninguno'])
+regimen = st.selectbox("Régimen", options=['Todo incluido', 'Media pensión', 'Sólo desayuno', 'Ninguno'])
 
 marcas = {'BLESS HOTEL IBIZA': 'BLESS',
           'BLESS HOTEL MADRID': 'BLESS',
@@ -145,5 +145,3 @@ reserva_aceptada = 'Su reserva ha sido procesada correctamente, le esperamos :)'
 if st.button('RESERVAR'):
            result = st.write(reserva_cancelada) if prediction[0] == 1 else st.write(reserva_aceptada)
            st.write(result)
-           
-           
