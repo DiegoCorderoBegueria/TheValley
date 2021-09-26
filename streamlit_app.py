@@ -122,12 +122,19 @@ fuente = 'DESCONOCIDA'
 
 all_inclusive = 1 if regimen == 'Todo incluido' else 0
 
-categoricas = [marca, 0, t_reserva, lead_time, pais, fuente]
-vars_encoded = cat_encoder.transform([categoricas])
-marca, t_reserva, lead_time, pais, fuente = vars_encoded[0][0], vars_encoded[0][1], vars_encoded[0][2], vars_encoded[0][3], vars_encoded[0][4]
+categoricas = {'NOM_MARCA' : marca,
+               'ID_CLUB_FACTURADO' : 0,
+               'DES_TIPO_RESERVA' : t_reserva,
+               'DES_TIER_LEAD_TIME' : lead_time,
+               'NOM_PAIS_HUESPED_FUSIONADO' : pais,
+               'NOM_FUENTE' : fuente}
+
+vars_encoded = encoder.transform([categoricas])
+marca, club, t_reserva, lead_time, pais, fuente = vars_encoded['NOM_MARCA'], vars_encoded['ID_CLUB_FACTURADO'], vars_encoded['DES_TIPO_RESERVA'], vars_encoded['DES_TIER_LEAD_TIME'], vars_encoded['NOM_PAIS_HUESPED_FUSIONADO'], vars_encoded['NOM_FUENTE']
+
 n_noches = num_scaler.transform(n_noches)
 
-X = [marca, 0, 0, t_reserva, n_noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 1, all_inclusive, 1, 0]
+X = [marca, club, 0, t_reserva, n_noches, lead_time, n_adultos, n_ninos, n_bebes, pais, 0, fuente, 1, 1, all_inclusive, 1, 0]
 prediction = model.predict(X)
 
 reserva_aceptada = 'Su reserva ha sido procesada correctamente, aunque no contamos con que aparezca :('
